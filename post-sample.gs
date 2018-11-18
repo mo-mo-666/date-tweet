@@ -393,7 +393,6 @@ var timeObj = {
 
 
 
-
 // 実行したいスクリプト本体
 function main() {
   var wl = weatherObj.parseAll();
