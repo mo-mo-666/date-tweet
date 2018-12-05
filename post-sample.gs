@@ -1,3 +1,6 @@
+// 参照：https://gist.github.com/kijtra/f4cdd8775277372d42f7
+
+
 // 最初にこの関数を実行し、ログに出力されたURLにアクセスしてOAuth認証する
 function twitterAuthorizeUrl() {
   Twitter.oauth.showUrl();
@@ -338,7 +341,7 @@ var weatherObj = {
   parseAll: function() {
     var CITYID = ['016010', '130010','230010', '270000', '400010']   // 少し上を見よ
     var today = new Date();
-    var todayForm = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + today.getDate();
+    var todayForm = today.getFullYear() + '-' +  ( '0' + (today.getMonth()+1)).slice(-2) + '-' + ( '0' + today.getDate()).slice(-2);
     var weatherAll = new Array();
     for(var i = 0;  i < CITYID.length; i++) {
       var w = this.parseOneCity(todayForm, CITYID[i]);
@@ -418,5 +421,5 @@ function main() {
   Twitter.tweet(result);
   
   deleteTrigger();
-};
+}
   
